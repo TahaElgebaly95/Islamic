@@ -10,6 +10,7 @@ class TextCustom extends StatelessWidget {
   final bool? softWrap;
   final TextAlign? textAlign;
   final TextOverflow? overflow;
+  final TextDirection? textDirection;
 
   const TextCustom(
       {required this.text,
@@ -21,11 +22,11 @@ class TextCustom extends StatelessWidget {
       this.decoration,
       this.softWrap,
       this.textAlign,
-      this.overflow});
+      this.overflow, this.textDirection});
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return Text(textDirection: textDirection,
       textAlign: textAlign,
       softWrap: softWrap,
       text,

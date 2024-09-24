@@ -1,20 +1,20 @@
+import 'package:arabic_tools/arabic_tools.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:islamic_app/core/components/widgets/text_custom.dart';
 import 'package:islamic_app/features/home_screen/model/quran_model.dart';
 import 'package:islamic_app/features/home_screen/view/widget/logo_home_screen.dart';
 import 'package:islamic_app/features/home_screen/view/widget/most_recently/list_view_recently.dart';
-import 'package:islamic_app/features/home_screen/view/widget/most_recently/most_recent_text.dart';
-import 'package:islamic_app/features/home_screen/view/widget/most_recently/most_recent_widget.dart';
 import 'package:islamic_app/features/home_screen/view/widget/search_bar.dart';
 import 'package:islamic_app/features/home_screen/view/widget/surah/surah_list.dart';
 import 'package:islamic_app/features/home_screen/view/widget/surah/surah_text.dart';
-import 'package:islamic_app/features/home_screen/view_model/quran_cubit/quran_cubit.dart';
 import 'package:islamic_app/features/home_screen/view_model/quran_cubit/quran_cubit.dart';
 import 'package:islamic_app/features/home_screen/view_model/quran_cubit/quran_state.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
+  static const homeScreen = 'homeScreen';
   QuranModel? quranModel;
 
   @override
@@ -36,12 +36,9 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     SizedBox(height: height * .27),
                     const SearchBarCustom(),
-                   // ListViewRecently(),
                     const ListViewRecently(),
                     const SurahText(),
-                    const Expanded(
-                      child:SurahList(),
-                    )
+                    const Expanded(child: SurahList()),
                   ],
                 );
               },

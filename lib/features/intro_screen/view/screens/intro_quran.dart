@@ -13,6 +13,8 @@ import 'package:islamic_app/core/utlis/navigation.dart';
 class IntroQuran extends StatelessWidget {
   const IntroQuran({super.key});
 
+  static const introQuran = 'introQuran';
+
   @override
   Widget build(BuildContext context) {
     int currentPage = 0;
@@ -20,13 +22,20 @@ class IntroQuran extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        body: MainContainer(child:  Column(
+          body: MainContainer(
+        child: Column(
           children: [
-             LogoPhoto(logoPhoto: AppImages.mos7af, space: height * 0.01,widthSize: width * 0.8,heightSize: height * 0.55,),
+            LogoPhoto(
+              logoPhoto: AppImages.mos7af,
+              space: height * 0.01,
+              widthSize: width * 0.8,
+              heightSize: height * 0.55,
+            ),
             SizedBox(height: height * 0.00),
             TitleText(titleText: LocaleKeys.readingTheQuran.tr()),
             SizedBox(height: height * 0.02),
-             DescriptionText(description: LocaleKeys.readAndYourLordIsTheMostGenerous.tr()),
+            DescriptionText(
+                description: LocaleKeys.readAndYourLordIsTheMostGenerous.tr()),
             SizedBox(height: height * 0.04),
             SmoothPageIndicator(
                 controller: PageController(initialPage: currentPage),
@@ -36,11 +45,11 @@ class IntroQuran extends StatelessWidget {
                 effect: const WormEffect(),
                 // your preferred effect
                 onDotClicked: (index) {
-                  Navigation.push(context, const IntroBearish());
+                  Navigator.pushNamed(context, IntroBearish.introBearish);
                 })
           ],
-        ),)
-      ),
+        ),
+      )),
     );
   }
 }

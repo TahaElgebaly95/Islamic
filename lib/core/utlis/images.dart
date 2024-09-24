@@ -20,4 +20,10 @@ abstract class AppImages {
   static const String helal = 'assets/images/helal.png';
 
   static const String homeMos7af = 'assets/images/home_mos7af.png';
+
+  static const String downBackground = 'assets/images/down_background.png';
+
+  static const String leftQous = 'assets/images/left-qous.png';
+
+  static const String rightQous = 'assets/images/right-qous.png';
 }

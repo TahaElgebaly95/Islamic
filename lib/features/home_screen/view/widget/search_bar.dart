@@ -16,7 +16,7 @@ class SearchBarCustom extends StatelessWidget {
         var cubit = QuranCubit.get(context);
         return Column(
           children: [
-            SearchBar(
+            SearchBar(focusNode:  FocusNode(descendantsAreFocusable: true,canRequestFocus: true),
               shape: WidgetStatePropertyAll(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.r),

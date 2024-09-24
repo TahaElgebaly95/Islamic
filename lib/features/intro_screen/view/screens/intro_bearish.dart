@@ -12,7 +12,7 @@ import 'package:islamic_app/core/utlis/navigation.dart';
 
 class IntroBearish extends StatelessWidget {
   const IntroBearish({super.key});
-
+  static const introBearish = 'introBearish';
   @override
   Widget build(BuildContext context) {
     int currentPage = 0;

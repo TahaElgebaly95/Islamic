@@ -8,7 +8,7 @@ class QuranModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     if (this.data != null) {
       data['data'] = this.data!.toJson();
     }
@@ -34,7 +34,7 @@ class Data {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     if (surahs != null) {
       data['surahs'] = surahs!.map((v) => v.toJson()).toList();
     }
@@ -76,7 +76,7 @@ class Surahs {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['number'] = number;
     data['name'] = name;
     data['englishName'] = englishName;
@@ -125,7 +125,7 @@ class Ayahs {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['number'] = number;
     data['text'] = text;
     data['numberInSurah'] = numberInSurah;
@@ -165,7 +165,7 @@ class Edition {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['identifier'] = identifier;
     data['language'] = language;
     data['name'] = name;

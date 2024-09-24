@@ -8,6 +8,8 @@ import 'package:islamic_app/core/utlis/colors.dart';
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
 
+  static const registerScreen = 'registerScreen';
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(

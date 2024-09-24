@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:islamic_app/core/components/widgets/text_custom.dart';
 import 'package:islamic_app/core/utlis/colors.dart';
-import 'package:islamic_app/core/utlis/navigation.dart';
-import 'package:islamic_app/features/auth_screen/view/screens/login_screen/login_screen.dart';
 
 class IfHaveAcc extends StatelessWidget {
   const IfHaveAcc({super.key});

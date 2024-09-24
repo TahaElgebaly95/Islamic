@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/core/components/widgets/text_custom.dart';
 import 'package:islamic_app/core/utlis/colors.dart';
-import 'package:islamic_app/item/local_keys.g.dart';
 
 
 class DescriptionText extends StatelessWidget {

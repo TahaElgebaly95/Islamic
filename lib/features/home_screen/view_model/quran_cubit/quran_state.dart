@@ -14,5 +14,11 @@ class QuranSearchSuccessState extends QuranStates {}
 
 class QuranSearchErrorState extends QuranStates {}
 
+class QuranMostRecentlyLoadingState extends QuranStates {}
+
+class QuranMostRecentlySuccessState extends QuranStates {}
+
+class QuranMostRecentlyErrorState extends QuranStates {}
+
 
   //'https://api.alquran.cloud/v1/quran/quran-uthmani'

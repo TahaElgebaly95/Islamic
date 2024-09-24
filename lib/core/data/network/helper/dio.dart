@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:islamic_app/core/data/local/shared_helper.dart';
 import 'package:islamic_app/core/data/local/shared_keys.dart';
-import 'package:islamic_app/core/data/network/helper/endpoints.dart';
 
 class DioHelper {
   static Dio? dio;

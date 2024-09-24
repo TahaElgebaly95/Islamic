@@ -3,17 +3,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/core/components/widgets/text_button_custom.dart';
 import 'package:islamic_app/core/utlis/images.dart';
 import 'package:islamic_app/core/utlis/navigation.dart';
-import 'package:islamic_app/features/intro_screen/view/screens/intro_mosque.dart';
+import 'package:islamic_app/features/intro_screen/view/screens/intro_welcome.dart';
 import 'package:islamic_app/features/intro_screen/view/widgets/choose_language.dart';
 import 'package:islamic_app/features/intro_screen/view/widgets/logo.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:islamic_app/features/intro_screen/view/widgets/main_container.dart';
 import 'package:islamic_app/core/utlis/colors.dart';
 
-import 'intro_quran.dart';
+import 'package:islamic_app/features/intro_screen/view/screens/intro_quran.dart';
 
 class IntroLanguage extends StatelessWidget {
   const IntroLanguage({super.key});
+
+  static const introLanguage = 'introLanguage';
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,7 @@ class IntroLanguage extends StatelessWidget {
                           activeDotColor: AppColors.primaryColor),
                       // your preferred effect
                       onDotClicked: (index) {
-                        Navigation.push(context, const IntroWelcome());
+                        Navigator.pushNamed(context, IntroWelcome.introWelcome);
                       }),
                   TextButtonCustom(
                     text: 'Next',

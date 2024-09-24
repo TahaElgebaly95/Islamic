@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:islamic_app/core/components/constant.dart';
 import 'package:islamic_app/core/data/network/helper/dio.dart';
@@ -19,19 +17,22 @@ class QuranCubit extends Cubit<QuranStates> {
 
   List<Surahs> mostRecentList = [];
 
+  void mostRecentlyRead(Surahs recent) {
+    if (mostRecentList.any(
+      (element) => element.number != recent.number,
+    )) {
+      mostRecentList.add(recent);
+    }
+    emit(QuranMostRecentlySuccessState());
+  }
+
   Future<void> getQuran() async {
     emit(QuranGetLoadingState());
     await DioHelper.getData(
       baseUrl: Constant.baseUrlQuran,
     ).then((value) {
       quranModel = QuranModel.fromJson(value.data);
-      for (var e in value.data['data']['surahs']) {
-        surahs.add(Surahs.fromJson(e));
-      }
-      edition = Edition.fromJson(value.data['data']['edition']);
-      // for (var e in value.data['data']['surahs']['index']['ayahs']) {
-      //   ayahs.add(Ayahs.fromJson(e));
-      // }
+      surahs = quranModel!.data!.surahs!;
       emit(QuranGetSuccessState());
     }).catchError((error) {
       print(error.toString());
@@ -42,24 +43,26 @@ class QuranCubit extends Cubit<QuranStates> {
   TextEditingController searchController = TextEditingController();
   List<Surahs> searchList = [];
 
-  Future<void> searchByName(String e) async {
+  void searchByName(String e) {
     searchList = [];
-    emit(QuranSearchLoadingState());
-    await DioHelper.getData(
-            queryParameters: {e: searchController.text},
-            )
-        .then((value) {
-      for (var i in surahs) {
-        if (i.name!.trim().toLowerCase().contains(
-              e.trim().toLowerCase(),
-            )) {
-          searchList.add(i);
-        }
+    for (var element in surahs) {
+      if (element.englishName!.trim().toLowerCase().contains(
+            e.trim().toLowerCase(),
+          )) {
+        searchList.add(element);
+      } else if (element.name!
+          .trim()
+          .toLowerCase()
+          .contains(e.trim().toLowerCase())) {
+        // Arabic_Tools().RemoveTashkeel(element.name!);
+        searchList.add(element);
+      } else if (element.englishNameTranslation!
+          .trim()
+          .toLowerCase()
+          .contains(e.trim().toLowerCase())) {
+        searchList.add(element);
       }
-      emit(QuranGetSuccessState());
-    }).catchError((error) {
-      print(error.toString());
-      emit(QuranGetErrorState());
-    });
+    }
+    emit(QuranSearchSuccessState());
   }
 }

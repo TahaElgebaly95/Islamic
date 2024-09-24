@@ -5,6 +5,8 @@ import 'package:islamic_app/features/intro_screen/view/screens/intro_language.da
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
+  static const splashScreen = 'splashScreen';
+
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
@@ -14,10 +16,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      Navigation.pushAndReplace(context, const IntroLanguage());
+      Navigator.pushReplacementNamed(context, IntroLanguage.introLanguage );
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(

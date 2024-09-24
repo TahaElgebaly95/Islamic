@@ -44,7 +44,7 @@ class MostRecentWidget extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                     TextCustom(
-                      text: ayahs.numberInSurah.toString(),
+                      text: recentSurahs.ayahs!.length.toString(),
                       color: AppColors.kBlack,
                       fontSize: 20.sp,
                       fontWeight: FontWeight.bold,

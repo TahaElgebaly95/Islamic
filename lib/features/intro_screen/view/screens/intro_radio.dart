@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart' as easy;
 import 'package:flutter/material.dart';
 import 'package:islamic_app/core/utlis/colors.dart';
 import 'package:islamic_app/core/utlis/images.dart';
+import 'package:islamic_app/features/home_screen/view/screens/home_screen.dart';
 import 'package:islamic_app/features/intro_screen/view/widgets/description_text.dart';
 import 'package:islamic_app/features/intro_screen/view/widgets/logo.dart';
 import 'package:islamic_app/features/intro_screen/view/widgets/main_container.dart';
@@ -13,6 +14,8 @@ import 'package:islamic_app/features/auth_screen/view/screens/login_screen/login
 
 class IntroRadio extends StatefulWidget {
   const IntroRadio({super.key});
+
+  static const introRadio = 'introRadio';
 
   @override
   State<IntroRadio> createState() => _IntroRadioState();
@@ -58,7 +61,7 @@ class _IntroRadioState extends State<IntroRadio> {
                     const WormEffect(activeDotColor: AppColors.primaryColor),
                 // your preferred effect
                 onDotClicked: (index) {
-                  Navigation.push(context, const LoginScreen());
+                 Navigator.pushNamed(context, HomeScreen.homeScreen);
                 })
           ],
         ),

@@ -1,14 +1,18 @@
 import 'package:easy_localization/easy_localization.dart' as easy;
 import 'package:flutter/material.dart';
 import 'package:islamic_app/core/utlis/images.dart';
+import 'package:islamic_app/features/intro_screen/view/screens/intro_quran.dart';
 import 'package:islamic_app/features/intro_screen/view/widgets/description_text.dart';
 import 'package:islamic_app/features/intro_screen/view/widgets/logo.dart';
 import 'package:islamic_app/features/intro_screen/view/widgets/main_container.dart';
 import 'package:islamic_app/features/intro_screen/view/widgets/title_text.dart';
 import 'package:islamic_app/item/local_keys.g.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class IntroWelcome extends StatelessWidget {
   const IntroWelcome({super.key});
+
+  static const introWelcome = 'introWelcome';
 
   @override
   Widget build(BuildContext context) {
@@ -36,17 +40,17 @@ class IntroWelcome extends StatelessWidget {
                         .weAreVeryExitedToHaveYouInOurCommunity
                         .tr())),
             SizedBox(height: height * 0.05),
-            // AnimatedSmoothIndicator(
-            //   // PageController
-            //   count: 3,
-            //   textDirection: TextDirection.ltr,
-            //   effect: const WormEffect(),
-            //   // your preferred effect
-            //   onDotClicked: (index) {
-            //     Navigation.push(context, const IntroQuran());
-            //   },
-            //   activeIndex: currentPage,
-            // )
+            AnimatedSmoothIndicator(
+              // PageController
+              count: 3,
+              textDirection: TextDirection.ltr,
+              effect: const WormEffect(),
+              // your preferred effect
+              onDotClicked: (index) {
+                Navigator.pushNamed(context, IntroQuran.introQuran);
+              },
+              activeIndex: currentPage,
+            )
           ],
         ),
       )),

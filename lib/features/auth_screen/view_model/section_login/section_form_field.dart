@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/core/components/widgets/elevated_button.dart';
 import 'package:islamic_app/core/components/widgets/text_form_field_custom.dart';
 import 'package:islamic_app/core/utlis/colors.dart';
-import 'package:islamic_app/core/utlis/navigation.dart';
 import 'package:islamic_app/core/utlis/show_toast.dart';
 import 'package:islamic_app/features/auth_screen/view_model/auth_cubit/cubit.dart';
 import 'package:islamic_app/features/auth_screen/view_model/auth_cubit/state.dart';

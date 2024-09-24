@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart'as easy;
+import 'package:easy_localization/easy_localization.dart' as easy;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/core/components/widgets/text_custom.dart';
@@ -8,9 +8,11 @@ import 'package:islamic_app/core/components/widgets/elevated_button.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
+  static const loginScreen = 'loginScreen';
+
   @override
   Widget build(BuildContext context) {
-   // context.setLocale(const Locale('en'));
+    // context.setLocale(const Locale('en'));
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -25,19 +27,22 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: 40.h),
               Text(LocaleKeys.welcome.tr()),
               TextCustom(text: LocaleKeys.splashScreen.tr()),
-              Directionality( textDirection: TextDirection.ltr,
+              Directionality(
+                textDirection: TextDirection.ltr,
                 child: Row(
                   children: [
                     SizedBox(
-                        width: 150.w,
-                      child: CustomElevatedButton(backgroundColor: Colors.red,
+                      width: 150.w,
+                      child: CustomElevatedButton(
+                        backgroundColor: Colors.red,
                         nameOfButton: LocaleKeys.english.tr(),
                         onPressed: () {
                           context.setLocale(const Locale('en'));
                         },
                       ),
                     ),
-                    SizedBox(width: 150.w,
+                    SizedBox(
+                      width: 150.w,
                       child: CustomElevatedButton(
                         backgroundColor: Colors.blue,
                         nameOfButton: LocaleKeys.arabic.tr(),

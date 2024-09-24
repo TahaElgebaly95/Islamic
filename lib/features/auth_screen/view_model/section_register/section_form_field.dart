@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/components/widgets/elevated_button.dart';
-import '../../../../core/components/widgets/text_form_field_custom.dart';
-import '../../../../core/utlis/colors.dart';
-import '../../../../core/utlis/navigation.dart';
-import '../../view/screens/login_screen/login_screen.dart';
-import '../auth_cubit/cubit.dart';
-import '../auth_cubit/state.dart';
+import 'package:islamic_app/core/components/widgets/elevated_button.dart';
+import 'package:islamic_app/core/components/widgets/text_form_field_custom.dart';
+import 'package:islamic_app/core/utlis/colors.dart';
+import 'package:islamic_app/core/utlis/navigation.dart';
+import 'package:islamic_app/features/auth_screen/view/screens/login_screen/login_screen.dart';
+import 'package:islamic_app/features/auth_screen/view_model/auth_cubit/cubit.dart';
+import 'package:islamic_app/features/auth_screen/view_model/auth_cubit/state.dart';
 
 class SectionFormField extends StatelessWidget {
   const SectionFormField({super.key});

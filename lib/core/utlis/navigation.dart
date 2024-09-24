@@ -20,17 +20,7 @@ class Navigation {
     );
   }
 
-  static void pushAndRemoveUntil(BuildContext context, Widget screen) {
-    Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(
-        builder: (context) => screen,
-      ),
-      (route) => false,
-    );
-  }
   static void pop(BuildContext context) {
     Navigator.pop(context);
   }
-
 }
