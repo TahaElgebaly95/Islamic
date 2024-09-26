@@ -5,14 +5,14 @@ import 'package:islamic_app/core/components/widgets/text_button_custom.dart';
 import 'package:islamic_app/core/utlis/colors.dart';
 
 class BackButtonWidget extends StatelessWidget {
-  const BackButtonWidget({super.key, required this.currentPage});
+  const BackButtonWidget({super.key, required this.currentPageVisibility});
 
-  final bool currentPage;
+  final bool currentPageVisibility;
 
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: currentPage,
+      visible: currentPageVisibility,
       child: TextButtonCustom(
         text: 'Back',
         onPressed: () {

@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/core/components/widgets/text_custom.dart';
 import 'package:islamic_app/core/utlis/colors.dart';
-import 'package:islamic_app/features/intro_screen/view/widgets/title_text.dart';
-import 'package:islamic_app/item/local_keys.g.dart';
+import 'package:islamic_app/features/intro_screen/view/widgets/components/title_text.dart';
 
 class ChooseLanguage extends StatelessWidget {
    ChooseLanguage({super.key, this.chooseLanguageWord,this.englishWord,this.arabicWord});

@@ -1,7 +1,5 @@
-import 'package:arabic_tools/arabic_tools.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:islamic_app/core/components/widgets/text_custom.dart';
 import 'package:islamic_app/features/home_screen/model/quran_model.dart';
 import 'package:islamic_app/features/home_screen/view/widget/logo_home_screen.dart';
 import 'package:islamic_app/features/home_screen/view/widget/most_recently/list_view_recently.dart';

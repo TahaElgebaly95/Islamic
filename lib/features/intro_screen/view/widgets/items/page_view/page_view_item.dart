@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:islamic_app/features/intro_screen/view/widgets/choose_language.dart';
-import 'package:islamic_app/features/intro_screen/view/widgets/description_text.dart';
-import 'package:islamic_app/features/intro_screen/view/widgets/logo.dart';
-import 'package:islamic_app/features/intro_screen/view/widgets/main_container.dart';
-import 'package:islamic_app/features/intro_screen/view/widgets/title_text.dart';
+import 'package:islamic_app/features/intro_screen/view/widgets/components/choose_language.dart';
+import 'package:islamic_app/features/intro_screen/view/widgets/components/logo.dart';
+import 'package:islamic_app/features/intro_screen/view/widgets/components/title_text.dart';
+import 'package:islamic_app/features/intro_screen/view/widgets/components/main_container.dart';
+import 'package:islamic_app/features/intro_screen/view/widgets/components/description_text.dart';
 
 class PageViewItem extends StatelessWidget {
   PageViewItem(
@@ -26,7 +26,6 @@ class PageViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
     return PageView(
       children: [
         MainContainer(
@@ -37,12 +36,12 @@ class PageViewItem extends StatelessWidget {
                 visible: titleText.isNotEmpty,
                 child: TitleText(titleText: titleText),
               ),
-              SizedBox(height: height * 0.02),
+              SizedBox(height: height * 0.016),
               Visibility(
                 visible: description.isNotEmpty,
                 child: DescriptionText(description: description),
               ),
-              SizedBox(height: height * 0.04),
+              SizedBox(height: height * 0.01),
               Visibility(
                 child: ChooseLanguage(
                     chooseLanguageWord: chooseLanguageWord,

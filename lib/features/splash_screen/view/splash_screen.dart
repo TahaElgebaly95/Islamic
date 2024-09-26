@@ -1,10 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:islamic_app/core/utlis/colors.dart';
-import 'package:islamic_app/features/intro_screen/view/screens/language_item.dart';
 import 'package:islamic_app/features/splash_screen/view/custom_splash.dart';
-
-import '../../intro_screen/view/screens/page_view/on_boarding_body.dart';
+import 'package:islamic_app/features/intro_screen/view/screens/on_boarding_body.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -22,6 +20,6 @@ class SplashScreen extends StatelessWidget {
         backgroundColor: AppColors.kBlack,
         nextRoute: OnBoardingPageViewBodyState.onBoardingPageViewBody,
         splash: const CustomSplashScreen(),
-        nextScreen:  const OnBoardingPageViewBodyState());
+        nextScreen: const OnBoardingPageViewBodyState());
   }
 }

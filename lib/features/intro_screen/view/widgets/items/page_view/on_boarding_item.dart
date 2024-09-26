@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:islamic_app/features/intro_screen/view/screens/bearish_item.dart';
-import 'package:islamic_app/features/intro_screen/view/screens/mos7af_item.dart';
-import 'package:islamic_app/features/intro_screen/view/screens/radio_item.dart';
-import 'package:islamic_app/features/intro_screen/view/screens/masjd_item.dart';
-import 'package:islamic_app/features/intro_screen/view/screens/language_item.dart';
+import 'package:islamic_app/features/intro_screen/view/widgets/items/item_view/bearish_item.dart';
+import 'package:islamic_app/features/intro_screen/view/widgets/items/item_view/radio_item.dart';
+import 'package:islamic_app/features/intro_screen/view/widgets/items/item_view/language_item.dart';
+import 'package:islamic_app/features/intro_screen/view/widgets/items/item_view/masjd_item.dart';
+import 'package:islamic_app/features/intro_screen/view/widgets/items/item_view/mos7af_item.dart';
 
-class OnBoardingViewItem extends StatelessWidget {
-  const OnBoardingViewItem({super.key, required this.pageController});
+class OnBoardingViewItems extends StatelessWidget {
+  const OnBoardingViewItems({super.key, required this.pageController});
 
   final PageController pageController;
 
