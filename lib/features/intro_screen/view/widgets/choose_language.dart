@@ -7,7 +7,12 @@ import 'package:islamic_app/features/intro_screen/view/widgets/title_text.dart';
 import 'package:islamic_app/item/local_keys.g.dart';
 
 class ChooseLanguage extends StatelessWidget {
-  const ChooseLanguage({super.key});
+   ChooseLanguage({super.key, this.chooseLanguageWord,this.englishWord,this.arabicWord});
+
+  static const chooseLanguage = 'chooseLanguage';
+  String? chooseLanguageWord ;
+  String? englishWord;
+  String? arabicWord ;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +20,7 @@ class ChooseLanguage extends StatelessWidget {
       textDirection:  TextDirection.ltr,
       child: Column(
         children: [
-          TitleText(titleText: LocaleKeys.chooseLanguage.tr()),
+          TitleText(titleText:chooseLanguageWord?.tr()??''),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -24,13 +29,14 @@ class ChooseLanguage extends StatelessWidget {
                     context.setLocale(const Locale('en'));
                   },
                   child: TextCustom(
-                    text: LocaleKeys.english.tr(),
+                    text: englishWord?.tr()??'',
                     color: AppColors.primaryColor,
                     fontSize: 20.sp,
                     fontWeight: FontWeight.bold,
                   )),
               TextCustom(
-                  text: '|',
+                  decoration: TextDecoration.none,
+                  text: chooseLanguageWord == null ? '' : '|',
                   color: AppColors.primaryColor,
                   fontSize: 20.sp),
               TextButton(
@@ -38,7 +44,8 @@ class ChooseLanguage extends StatelessWidget {
                   context.setLocale(const Locale('ar'));
                 },
                 child: TextCustom(
-                  text: LocaleKeys.arabic.tr(),
+                  text: arabicWord?.tr()??'',
+                // text: LocaleKeys.arabic.tr(),
                   color: AppColors.primaryColor,
                   fontSize: 20.sp,
                   fontWeight: FontWeight.bold,

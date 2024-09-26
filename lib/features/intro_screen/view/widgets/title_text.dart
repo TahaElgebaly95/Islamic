@@ -11,9 +11,10 @@ class TitleText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextCustom(
+        decoration: TextDecoration.none,
         text: titleText.tr(),
         color: AppColors.primaryColor,
-        fontSize: 25.sp,
+        fontSize: 23.sp,
         fontWeight: FontWeight.bold);
   }
 }

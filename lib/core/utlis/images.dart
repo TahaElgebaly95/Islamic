@@ -9,7 +9,7 @@ abstract class AppImages {
 
   static const String islami = 'assets/images/Islami.png';
 
-  static const String kabba = 'assets/images/kabba 1.png';
+  static const String kabba = 'assets/images/masjd.png';
 
   static const String mosque = 'assets/images/mosque.png';
 

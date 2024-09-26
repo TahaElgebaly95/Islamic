@@ -1,9 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:islamic_app/features/intro_screen/view/screens/intro_language.dart';
 import 'package:islamic_app/features/splash_screen/view/splash_screen.dart';
 import 'package:islamic_app/core/utlis/on_page_route.dart';
+import 'package:islamic_app/features/home_screen/view/screens/home_screen.dart';
+import 'package:islamic_app/features/surah_details_screen/view/screens/surah_details.dart';
 
 class MyAppIslamic extends StatelessWidget {
   const MyAppIslamic({super.key});
@@ -25,7 +26,8 @@ class MyAppIslamic extends StatelessWidget {
           initialRoute: SplashScreen.splashScreen,
           routes: {
             SplashScreen.splashScreen: (context) => const SplashScreen(),
-            IntroLanguage.introLanguage: (context) => const IntroLanguage(),
+            HomeScreen.homeScreen: (context) =>  HomeScreen(),
+            SurahDetails.surahDetails: (context) => const SurahDetails(),
           },
         );
       },

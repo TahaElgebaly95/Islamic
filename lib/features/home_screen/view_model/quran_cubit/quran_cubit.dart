@@ -10,11 +10,6 @@ class QuranCubit extends Cubit<QuranStates> {
 
   static QuranCubit get(context) => BlocProvider.of(context);
 
-  QuranModel? quranModel;
-  List<Surahs> surahs = [];
-  List<Ayahs> ayahs = [];
-  Edition? edition;
-
   List<Surahs> mostRecentList = [];
 
   void mostRecentlyRead(Surahs recent) {
@@ -26,12 +21,19 @@ class QuranCubit extends Cubit<QuranStates> {
     emit(QuranMostRecentlySuccessState());
   }
 
+  QuranModel? quranModel;
+  List<Surahs> surahs = [];
+  List<Ayahs> ayahs = [];
+
   Future<void> getQuran() async {
     emit(QuranGetLoadingState());
     await DioHelper.getData(
       baseUrl: Constant.baseUrlQuran,
     ).then((value) {
       quranModel = QuranModel.fromJson(value.data);
+      for (var element in quranModel!.data!.surahs!) {
+        ayahs.addAll(element.ayahs!);
+      }
       surahs = quranModel!.data!.surahs!;
       emit(QuranGetSuccessState());
     }).catchError((error) {

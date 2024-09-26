@@ -14,11 +14,12 @@ class DescriptionText extends StatelessWidget {
     return SizedBox(
       width: width * 0.9,
       child: TextCustom(
+        decoration: TextDecoration.none,
         softWrap: true,
         textAlign: TextAlign.center,
         text: description.tr(),
         color: AppColors.primaryColor,
-        fontSize: 20.sp,
+        fontSize: 17.sp,
         fontWeight: FontWeight.bold,
       ),
     );

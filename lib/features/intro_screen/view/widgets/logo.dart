@@ -4,17 +4,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islamic_app/core/utlis/images.dart';
 
 class LogoPhoto extends StatelessWidget {
-  const LogoPhoto(
+  LogoPhoto(
       {super.key,
       required this.logoPhoto,
-      required this.space,
-      required this.widthSize,
-      required this.heightSize});
+      this.space,
+      this.widthSize,
+      this.heightSize});
 
   final String logoPhoto;
-  final double space;
-  final double widthSize;
-  final double heightSize;
+  double? space;
+  double? widthSize;
+  double? heightSize;
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +31,16 @@ class LogoPhoto extends StatelessWidget {
                 child: Image.asset(AppImages.islami)),
           ],
         ),
-        SizedBox(height: space.h),
-        Image.asset(
-          logoPhoto,
-          width: widthSize,
-          height: heightSize,
+        SizedBox(height: 20.h),
+        SizedBox(
+          width: width * .9,
+          height: height * .40,
+          child: Image.asset(
+            logoPhoto,
+            fit: BoxFit.contain,
+          ),
         ),
+        SizedBox(height: height * 0.1),
       ],
     );
   }

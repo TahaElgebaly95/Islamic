@@ -19,16 +19,17 @@ class SurahDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    Surahs surahs = ModalRoute.of(context)!.settings.arguments as Surahs;
+    Surahs surahs = ModalRoute.of(context)?.settings.arguments as Surahs;
 
     return BlocBuilder<QuranCubit, QuranStates>(
       builder: (context, state) {
         var cubit = QuranCubit.get(context);
         return Scaffold(
+          backgroundColor: AppColors.kBlack,
           appBar: AppBar(
             centerTitle: true,
             backgroundColor: AppColors.kBlack,
-            title: CustomAppBar(nameOfSurah: 'surahs.name??' ''),
+            title: CustomAppBar(nameOfSurah: surahs.name??' '),
             leading: IconButton(
               onPressed: () {
                 Navigation.pop(context);
@@ -51,7 +52,7 @@ class SurahDetails extends StatelessWidget {
                       children: [
                         Image.asset(AppImages.leftQous),
                         TextCustom(
-                            text: 'ألفاتحة',
+                            text: surahs.name.toString(),
                             color: AppColors.primaryColor,
                             fontSize: 20.sp,
                             fontWeight: FontWeight.bold),
@@ -64,7 +65,7 @@ class SurahDetails extends StatelessWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) =>
                           AyahContainer(ayahs: surahs.ayahs![index]),
-                      itemCount: surahs.ayahs!.length,
+                      itemCount:surahs.ayahs!.length,
                     ),
                     // const Spacer(),
                     // Image.asset(AppImages.downBackground),

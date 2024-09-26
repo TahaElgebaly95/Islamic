@@ -25,7 +25,7 @@ class SurahList extends StatelessWidget {
                   onTap: () {
                     // cubit.mostRecentlyRead(cubit.surahs[index]);
                     // cubit.searchController.clear();
-                    Navigator.pushNamed(context, SurahDetails.surahDetails);
+                    Navigator.pushNamed(context, SurahDetails.surahDetails , arguments: cubit.surahs[index]);
                   },
                 ),
                 itemCount: cubit.searchController.text.isEmpty
