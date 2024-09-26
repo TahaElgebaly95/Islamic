@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/core/utlis/images.dart';
-import 'package:islamic_app/features/intro_screen/view/screens/page_view/page_view_item.dart';
+import 'package:islamic_app/features/intro_screen/view/widgets/items/page_view/page_view_item.dart';
 import 'package:islamic_app/item/local_keys.g.dart';
 
 class LanguageItem extends StatelessWidget {
